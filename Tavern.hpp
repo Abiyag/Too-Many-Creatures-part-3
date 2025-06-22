@@ -1,3 +1,11 @@
+/**
+ * Abiyag Rahman
+ * CSCI 235
+ * 
+ * Project 3
+ */
+
+
 #ifndef TAVERN_H
 #define TAVERN_H
 
