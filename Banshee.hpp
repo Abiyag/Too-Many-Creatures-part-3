@@ -2,7 +2,9 @@
 #define BANSHEE_H
 
 #include "Creature.hpp"
+#include "Wizard.hpp"
 #include <string>
+
 
 class Banshee : public Creature {
 
@@ -24,6 +26,8 @@ class Banshee : public Creature {
         void setFearInducing(const bool& fearInducing);
 
         bool isFearInducing() const;
+
+        void attack(Wizard* wizard) const;
 
         void display() const;
 

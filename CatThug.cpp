@@ -102,6 +102,11 @@ void CatThug::setIsWanted(const bool& isWanted) {
 bool CatThug::isWanted() const {
     return isWanted_;
 }
+void CatThug::attack(Wizard* wizard) const{
+    int currHealth = wizard->getHealth() - 10;
+    wizard->setHealth(currHealth);
+    std::cout << getName() << " has attacked " << wizard->getName() << "with its powerful claws!" << std::endl;
+}
 
 void CatThug::display() const {
     std::cout << getName() << std::endl;

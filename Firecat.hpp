@@ -2,8 +2,11 @@
 #define FIRECAT_H
 
 #include "Creature.hpp"
+#include "Wizard.hpp"
 #include <string>
 #include <iostream>
+
+
 
 class Firecat : public Creature {
 
@@ -25,6 +28,8 @@ class Firecat : public Creature {
         void setArsonist(const bool& arsonist);
 
         bool isArsonist() const;
+
+        void attack(Wizard* wizard) const;
 
         void display() const;
 

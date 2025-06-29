@@ -49,6 +49,11 @@ void Firecat::setArsonist(const bool& arsonist) {
 bool Firecat::isArsonist() const {
     return arsonist_;
 }
+void Firecat::attack(Wizard* wizard) const{
+    int currHealth = wizard->getHealth() - 10;
+    wizard->setHealth(currHealth);
+    std::cout << getName() << " has thrown a fireball at " << wizard->getName() << std::endl;
+}
 
 void Firecat::display() const {
     std::cout << getName() << std::endl;

@@ -51,6 +51,12 @@ bool Banshee::isFearInducing() const {
     return fearInducing_;
 }
 
+void Banshee::attack(Wizard* wizard) const{
+    int currHealth = wizard->getHealth() - 10;
+    wizard->setHealth(currHealth);
+    std::cout << wizard->getName() << " has been attacked with a powerstrike! By " << getName() << std::endl;
+}
+
 void Banshee::display() const {
     std::cout << getName() << std::endl;
     std::cout << "Category: " << getCategory() << std::endl;

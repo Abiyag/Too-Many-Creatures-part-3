@@ -2,10 +2,13 @@
 #define CATTHUG_H
 
 #include "Creature.hpp"
+#include "Wizard.hpp"
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <cctype>
+
+
 
 class CatThug : public Creature {
 
@@ -38,6 +41,9 @@ class CatThug : public Creature {
         void setIsWanted(const bool& isWanted);
 
         bool isWanted() const;
+
+        void attack(Wizard* wizard) const;
+
 
         void display() const;
 

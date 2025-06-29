@@ -7,9 +7,10 @@ Creature::Creature() {
     health_ = 1;
     level_ = 1;
     isHostile_ = false;
+    speed_ = 1;
 }
 
-Creature::Creature(const std::string& name, Category category, School school, int health, int level, bool isHostile) {
+Creature::Creature(const std::string& name, Category category, School school, int health, int level, int speed, bool isHostile) {
     setName(name);
     setCategory(category);
     setSchool(school);
@@ -18,6 +19,9 @@ Creature::Creature(const std::string& name, Category category, School school, in
     }
     if (!setLevel(level)) {
         level_ = 1;
+    }
+    if(!setSpeed(speed)) {
+        speed_ = 1;
     }
     setHostility(isHostile);
 }
@@ -64,7 +68,7 @@ std::string Creature::getCategory() const {
     }
 }
 
-void Creature::setSchool(const School& school) {
+void Creature::setSchool(const School school) {
     school_ = school;
 }
 
@@ -84,6 +88,7 @@ std::string Creature::getSchool() const {
     } else {
         return "SCHOOL_UNKNOWN";
     }
+    
 }
 
 bool Creature::setHealth(const int& health) {
@@ -112,6 +117,18 @@ int Creature::getLevel() const {
     return level_;
 }
 
+ bool Creature::setSpeed(int speed){
+    if (speed <= 0) {
+        return false;
+    }
+    speed_ = speed;
+    return true;
+ }
+       
+int Creature::getSpeed() const{
+    return speed_;
+}
+        
 void Creature::setHostility(const bool& isHostile) {
     isHostile_ = isHostile;
 }
@@ -126,6 +143,7 @@ void Creature::display() const {
     std::cout << "School: " << getSchool() << std::endl;
     std::cout << "Health: " << getHealth() << std::endl;
     std::cout << "Level: " << getLevel() << std::endl;
+    std:: cout << "Speed: " << getSpeed() << std::endl;
     if (isHostile() == true) {
         std::cout << "Hostile: TRUE" << std::endl;
     } else {
